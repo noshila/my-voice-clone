@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Cloning TTS</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.js"></script>
+    <style>
+        body { font-family: sans-serif; }
+        .container { width: 80%; margin: 0 auto; padding-top: 20px; }
+        input[type="text"], textarea { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        button { padding: 10px 20px; cursor: pointer; }
+        #waveform { margin-top: 20px; }
+        audio { width: 100%; margin-top: 10px; }
+        #downloadLink { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Cloning Text-to-Speech</h1>
+
+        <label for="promptAudio">Upload Voice Prompt (WAV or other audio):</label>
+        <input type="file" id="promptAudio" accept="audio/*"><br><br>
+
+        <label for="targetText">Text to Speak:</label><br>
+        <textarea id="targetText" rows="4" placeholder="Enter text here"></textarea><br>
+
+        <button id="generateButton">Generate Speech</button>
+
+        <div id="waveform"></div>
+        <audio id="audioPlayer" controls></audio>
+        <a id="downloadLink" style="display:none;" download>Download Audio</a>
+
+        <div id="status"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
